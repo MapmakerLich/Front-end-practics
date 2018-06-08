@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Страничка про меня</title>
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/fm.revealator.jquery.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+    </head>
+    <body>
+        <div class="header_button">
+            <a class="hamburger_box" id="hamburger"></a>
+            <p class="menu_box">МЕНЮ</p>
+            <div class="clear"></div>
+        </div>
+        <div class="top_menu" id="data_hamburger_menu">
+            <a class="top_button about_me" href="#about_me">Обо мне</a>
+            <a class="top_button hobby" href="#hobby">Мое хобби</a>
+            <a class="top_button video" href="#video">Любимые фильмы</a>
+            <a class="top_button add" id="add_movie">Добавить фильм</a>
+        </div>
+        <div class="overlay" id="overlay_movie"></div>
+        <div class="window movie" id="window_movie">
+            <img src="images/cross.png" alt="close" class="close" id="close_movie">
+            <p class="write_me_title">Добавить фильм</p>
+            <form action="php/form_handler.php" method="get" class="form_container">
+                <label for="image_url" class="form_caption">Ссылка на картинку</label>
+                <label for="image_url" class="form_caption star">*</label>
+                <input type="text" name="image_url" id="image_url" class="some_form movie_form">
+                <label for="film_name" class="form_caption">Название фильма</label>
+                <label for="film_name" class="form_caption star">*</label>
+                <input type="text" name="film_name" id="film_name" class="some_form movie_form">
+                <label for="movie_description" class="form_caption">Описание фильма</label>
+                <label for="movie_description" class="form_caption star">*</label>
+                <textarea id="movie_description" name="movie_description" class="some_form area movie_form"></textarea>
+                <input type="submit" value="Отправить" class="submit_form" id="submit_movie">
+            </form>
+        </div>
+        <div class="top_image"></div>
+        <div class="main_container" id="about_me">
+            <img src="images/my_photo.png" alt="my_photo" class="my_photo revealator-slideup revealator-once">
+            <div class="citation_container revealator-slideup revealator-once">
+                <blockquote class="citation">У человека должно быть единственное многоликое лицо</blockquote>
+                <blockquote class="author">-Михаил Арзяев</blockquote>
+            </div>
+            <div class="clear"></div>
+            <div class="lists_container">
+                <p class="list_title revealator-slideup revealator-once">Любимые жанры книг</p>
+                <ul class="revealator-slideup revealator-once">
+                    <li>Научная литература</li>
+                    <li>Sci-fi</li>
+                    <li>Антиутопия</li>
+                    <li>Фэнтези</li>
+                </ul>
+                <p class="list_title revealator-slideup revealator-once">Любимые фильмы</p>
+                <ol class="revealator-slideup revealator-once">
+                    <li>Звёздные войны</li>
+                    <li>Пираты карибского моря</li>
+                    <li>28 панфиловцев</li>
+                    <li>Сокровище нации</li>
+                </ol>
+            </div>
+            <div class="about_me_container" id="hobby">
+                <h1 class="name revealator-slideup revealator-once">Арзяев Михаил</h1>
+                <div class="rectangle revealator-slideup revealator-once"></div>
+                <p class="caption revealator-slideup revealator-once">
+                    Меня зовут Арзяев Михаил. Я живу в городе Йошкар-Ола, учусь в ПГТУ на специальности Программная инженерия.
+                </p>
+                <h2 class="subtitle revealator-slideup revealator-once">Две моих школы</h2>
+                <p class="caption revealator-slideup revealator-once">
+                    Я учился в школе №30 до 9 класса. После 8-ого класса я учился в физмате в лицее №11. Я получил хорошие баллы на ЕГЭ, особенно по физике, и решил дальше учиться на ПС, дабы приобрести навыки геймдизайнера.
+                </p>
+                <div class="revealator-slideup revealator-once"><a class="link" id="write_me"><span class="text">Напиши мне</span> →</a></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="overlay" id="overlay"></div>
+        <div class="window" id="window">
+            <img src="images/cross.png" alt="close" class="close" id="close">
+            <p class="write_me_title">Напиши мне</p>
+            <form action="php/form_handler.php" method="get" class="form_container">
+                <label for="name" class="form_caption">Ваше имя:</label>
+                <label for="name" class="form_caption star">*</label>
+                <input type="text" name="name" id="name" class="some_form required">
+                <label for="email" class="form_caption">Ваш e-mail:</label>
+                <label for="email" class="form_caption star">*</label>
+                <input type="text" name="email" id="email" class="some_form required">
+                <label for="country" class="form_caption">Откуда вы?</label>
+                <select name="country" id="country" class="some_form select_form">
+                    <option value="russia">Россия</option>
+                    <option value="belarus">Беларусь</option>
+                    <option value="ukraine">Украина</option>
+                    <option value="other">Иная страна</option>
+                </select>
+                <p class="form_caption">Ваш пол:</p>
+                <div class="radio_form_container">
+                    <label class="radio_form">
+                        <input class="radio" name="gender" type="radio" value="male">
+                        Мужской
+                    </label>
+                    <label class="radio_form last">
+                        <input class="radio" name="gender" type="radio" value="female">
+                        Женский
+                    </label>
+                </div>
+                <label for="message" class="form_caption">Ваше сообщение:</label>
+                <textarea id="message" name="message" class="some_form area"></textarea>
+                <input type="submit" value="Отправить" class="submit_form" id="submit_form">
+            </form>
+        </div>
+        <div class="movies_container" id="video">
+            <h2 class="movies_title revealator-slideup revealator-once">Любимые фильмы или серии фильмов:</h2>
+            <div id="movies">
+                <div class="movie_container">
+                    <img src="images/star_wars.jpeg" alt="star_wars" class="movie_image revealator-slideup revealator-once">
+                    <h3 class="movie_title revealator-slideup revealator-once">Звёздные войны:</h3>
+                    <p class="movie_caption revealator-slideup revealator-once">Превосходная sci-fi серия, включающая в себя 10 кинофильмов, а также кучу прочих вещей под названием "расширенная вселенная". Жаль, что Дисней вколачивает гвозди в гроб ЗВ.</p>
+                </div>
+                <div class="movie_container">
+                    <img src="images/pirates_of_the_caribbean.jpg" alt="pirates_of_the_caribbean" class="movie_image revealator-slideup revealator-once">
+                    <h3 class="movie_title revealator-slideup revealator-once">Пираты Карибского моря</h3>
+                    <p class="movie_caption revealator-slideup revealator-once">Франшиза в жанре экшн-приключения. Главный герой любой части — капитан Джек Воробей. Ещё одна франшиза, убиваемая Диснеем. #диснейзло</p>
+                </div>
+                <div class="movie_container">
+                    <img src="images/28.jpg" alt="28 panfilovtsev" class="movie_image revealator-slideup revealator-once">
+                    <h3 class="movie_title revealator-slideup revealator-once">28 панфиловцев</h3>
+                    <p class="movie_caption revealator-slideup revealator-once">Добротный отечественный фильм про войну, снятый на народные денежки. Выделяется тем, что не является ужасным - достижение для российского фильма. А ещё тут помогли Gaijin Entertaiment - в просторечии "улитки" - русские мастера компьютерной графики.</p>
+                </div>
+                <div class="movie_container last">
+                    <img src="images/treasure.jpg" alt="Treasure of the Nation" class="movie_image revealator-slideup revealator-once">
+                    <h3 class="movie_title revealator-slideup revealator-once">Сокровище нации</h3>
+                    <p class="movie_caption revealator-slideup revealator-once">Фильмы про охоту за сокровищами, спрятанными в таинственном месте, куда ведёт серия подсказок. В центре - потомок кучера одного из отцов-основателей, хакер-конспиролог и профессор истории. В общем, клишированный фильм, но для своего времени - эффектный! (А ещё у меня был диск с ним, где были тупые субтитры)</p>
+                </div>
+                <div class="movie_container hidden_movie">
+                    <img src="images/master.jpg" alt="Master and Margarita" class="movie_image">
+                    <h3 class="movie_title">Мастер и Маргарита</h3>
+                    <p class="movie_caption">Многосерийный фильм по роману Булгакова. Конечно, фиг пойми откуда Берия, если действие разворачивается в первой половине 30-х годов, до Большого террора, но в целом хороший фильм, соответствующей как книге, так и истории.</p>
+                </div>
+                <div class="movie_container hidden_movie">
+                    <img src="images/lion king.jpg" alt="Lion king" class="movie_image">
+                    <h3 class="movie_title">Король Лев</h3>
+                    <p class="movie_caption">Кто не фанател от этого мультика в детстве? Да никто! Прекрасная и интересная история, которая породила хороший спин-офф и... слабый мультсериал-сиквел. Деньги-деньги-денежки, что делать. Почему такая хорошая студия превратилась в фуфло?</p>
+                </div>
+                <div class="movie_container hidden_movie">
+                    <img src="images/avatar.jpeg" alt="Avatar" class="movie_image">
+                    <h3 class="movie_title">Аватар</h3>
+                    <p class="movie_caption">Не путать с мультсериалом про Аанга. Фильм Джеймса Кэмерона - короля компьютерной графики современности является до сих пор одним из лучших в истории. Да, сюжет скучноват - люди-колонизаторы не считаются ни с чем, чтобы захватить планету местных туземцев ради ресурсов. Но суть фильма - в красивейшей картинке.</p>
+                </div>
+                <div class="movie_container hidden_movie last">
+                    <img src="images/avengers.jpg" alt="Avengers 3" class="movie_image">
+                    <h3 class="movie_title">Мстители 3: Война бесконечности</h3>
+                    <p class="movie_caption">Марвел успешно снимает крупные блокбастеры. В этот раз команде супергероев придётся объединиться против великого титана-безумца Таноса, решившего в кои-то веки взять дело в свои руки. Вдобавок, в фильме достаточно много мрачных сцен и печальных моментов. Великолепно, не так ли?</p>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <a class="show_movies revealator-slideup revealator-once" id="show_movies">Все фильмы</a>
+        </div>
+        <div class="footer">
+            <p class="text_footer">© 2006-2018 Поволжский государственный технологический университет, ФГБОУ ВО «ПГТУ»</p>
+        </div>
+        <script src="js/jquery.js"></script>
+        <script src="js/jquery.smooth-scroll.js"></script>
+        <script src="js/fm.revealator.jquery.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
